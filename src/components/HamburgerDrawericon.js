@@ -10,11 +10,17 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useMemo } from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
   });
-
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
@@ -60,8 +66,11 @@ export default function SwipeableTemporaryDrawer() {
 
   return (
     <div>
-        <React.Fragment key={"left"}>
-          <Button onClick={toggleDrawer("left", true)}><MenuIcon/> </Button>
+      <React.Fragment key={"left"}>
+        <Button onClick={toggleDrawer("left", true)}>
+          <MenuIcon />
+        </Button>
+        <ThemeProvider theme={darkTheme}>
           <SwipeableDrawer
             anchor={"left"}
             open={state["left"]}
@@ -70,7 +79,9 @@ export default function SwipeableTemporaryDrawer() {
           >
             {list("left")}
           </SwipeableDrawer>
-        </React.Fragment>
+        </ThemeProvider>
+
+      </React.Fragment>
     </div>
   );
 }
