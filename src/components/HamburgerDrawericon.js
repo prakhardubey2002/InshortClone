@@ -10,9 +10,10 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useMemo } from 'react';
+// import { useMemo } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-export default function SwipeableTemporaryDrawer() {
+import categories from '../data/category';
+export default function SwipeableTemporaryDrawer({setCategory}) {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -35,28 +36,23 @@ export default function SwipeableTemporaryDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 210,
+      paddingLeft:2,
+      paddingRight:1,
+     }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
+          <ListItem >
+            Categories
           </ListItem>
-        ))}
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
+        {categories.map((text) => (
+          <ListItem style={{height:40,borderRadius:4}} button key={text} onClick={()=>setCategory(text)}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
