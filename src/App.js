@@ -5,7 +5,8 @@ import Navinshorts from './components/Navinshorts';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import NewsContent from './components/NewsContent/NewsContent';
-import apikey from "./data/config"
+import apikey from "./ign/config"
+import Footer from './components/Footer/Footer';
 function App() {
   const [category,setCategory]=useState("general");
   const [newsArray,setNewsArray] = useState([]);
@@ -30,7 +31,7 @@ function App() {
     <div className="App">
       <Navinshorts setCategory={setCategory}/>
       <NewsContent/>
-      
+     <Footer/>
     </div>
   );
 }
