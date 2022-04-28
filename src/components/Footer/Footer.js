@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footercontent">
                 <div className="imgn">
                     <div className="img">
-                        <img height="60%" src="https://assets.inshorts.com/website_assets/images/logo_footer.png" alt="" />
+                        <img  src="https://assets.inshorts.com/website_assets/images/logo_footer.png" alt="" />
                         <br />
                         <p><span>Inshorts</span> Pte. Ltd.</p>
                         <p>©COPYRIGHT 2022</p>

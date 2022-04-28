@@ -77,8 +77,11 @@
     
 }
 footer{
-    padding: 0.2rem;
+    padding: 0.4rem;
     font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
 }
 footer a{
@@ -88,7 +91,7 @@ footer a{
 @media (max-width:995px) {
     .Footer .footercontent .imgn .img img{
         width: 100%;
-        height: 30%;
+        height: 58%;
     }
     .Footer .footercontent .imgn .img{
         font-size: 0.6rem;
