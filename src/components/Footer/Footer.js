@@ -22,6 +22,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="icon">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <div className="order">
                     <FacebookIcon/>
                     <TwitterIcon/>
@@ -29,6 +33,9 @@ const Footer = () => {
                     </div>
                 </div>
         </div>
+        <footer>
+            <p>Cloned with &#10084; by <a href="https://www.linkedin.com/in/prakhar-dubey-3790b81b7/">Prakhar</a></p>
+        </footer>
     </div>
   )
 }

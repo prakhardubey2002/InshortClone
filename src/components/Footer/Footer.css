@@ -1,9 +1,12 @@
 .Footer{
+    margin-top: 1rem;
+    overflow: hidden;
         width: 100vw;
         height: auto;
         padding: 1rem;
         background-color: #323232;
        display: flex;
+       flex-direction: column;
        justify-content: center;
        align-items: center;
        color: white;
@@ -27,8 +30,16 @@
     font-size: 0.9rem;
     padding: 0.4rem;
 }
+
+.Footer .footercontent .imgn .img p{
+    color: #767578;
+}
+.Footer .footercontent .imgn .img span{
+    font-weight: 1000;
+    color: white;
+}
 .Footer .footercontent .imgn .img img{
-    width: 80%;
+    width: 60%;
 }
 .Footer .footercontent .imgn .img::after{
     content: "";
@@ -38,6 +49,57 @@
   top: 8%;
   z-index: 100; 
   width: 1px; 
-  height: 80%;
-  background: rgb(255, 255, 255); 
+  height: 96%;
+  background: #808290; 
+}
+.Footer .footercontent .imgn .contact{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.Footer .footercontent .imgn .contact h2{
+    font-weight: 800;
+}
+.Footer .footercontent .imgn .contact p{
+    font-size: 0.8rem;
+    color: white;
+}
+.Footer .footercontent .icon{
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+footer{
+    padding: 0.2rem;
+    font-size: 0.6rem;
+   
+}
+footer a{
+    text-decoration: none;
+    color: inherit;
+}
+@media (max-width:995px) {
+    .Footer .footercontent .imgn .img img{
+        width: 100%;
+        height: 30%;
+    }
+    .Footer .footercontent .imgn .img{
+        font-size: 0.6rem;
+    }
+    .Footer .footercontent .imgn .contact h2{
+            font-size: 0.4rem;
+    }
+    .Footer .footercontent .imgn .contact p{
+        font-size: 0.5rem;
+    }
+    .Footer .footercontent .icon{
+        display: none;
+    }
 }

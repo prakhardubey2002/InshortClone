@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Navinshorts setCategory={setCategory}/>
-      <NewsContent/>
+      <NewsContent newsArray={newsArray} newsResults={newsResults} />
      <Footer/>
     </div>
   );
