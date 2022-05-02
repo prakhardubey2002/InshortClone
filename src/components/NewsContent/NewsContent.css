@@ -17,3 +17,13 @@
         display: none;
     }    
 }
+.loadMore{
+    margin: 20px 40% ;  
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.16);
+    padding: 7px 25px;
+    font-size: 13px;
+    /* margin-top: -20px; */
+}

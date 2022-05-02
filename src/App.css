@@ -7,6 +7,7 @@
 }
 body{
   font-family: 'Poppins','lato',sans-serif,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
 }
 a:link,a:hover,a:visited,a:active{
   text-decoration: none;

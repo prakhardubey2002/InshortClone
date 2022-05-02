@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '@mui/material/Container';
 import './NewsContent.css'
 import NewsCard from '../NewsCard/NewsCard';
-const NewsContent = ({newsArray,newsResults}) => {
+const NewsContent = ({newsArray,newsResults,loadmore,setLoadmore}) => {
   return (
     <Container maxWidth="md">
         <div className='content'>
@@ -18,6 +18,15 @@ const NewsContent = ({newsArray,newsResults}) => {
                 <NewsCard newsItem={newsItem} key={newsItem.title} />
               ))
             }
+            {loadmore <= newsResults &&(// reason we added <= is because when limit is reached button will disapper
+                  <>
+                  <hr/>
+                  <button className='loadMore' onClick={() => setLoadmore(loadmore + 20) } >
+                    Load More
+                  </button>
+                  </>
+                )}
+           
             
         </div>
     </Container>

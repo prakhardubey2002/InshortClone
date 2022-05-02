@@ -11,11 +11,11 @@ function App() {
   const [category,setCategory]=useState("general");
   const [newsArray,setNewsArray] = useState([]);
   const [newsResults,setNewsResults]=useState();
-
+  const[loadmore,setLoadmore]=useState(20)
   const newsApi=async() =>{
     try
     {
-      const news = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&category=${category}`);
+      const news = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&category=${category}&pageSize=${loadmore}`);
       setNewsArray(news.data.articles); 
       setNewsResults(news.data.totalResults);
     }
@@ -26,12 +26,16 @@ function App() {
   }
   useEffect(() => {
     newsApi();
-  }, [newsResults,category])
+  }, [newsResults,category,loadmore])// api will fire again for these useeffect dependency like when button is clicked for apu pagination category is upfdated for srted list news  or for complete newsResult
   console.log(newsArray)
   return (
     <div className="App">
       <Navinshorts setCategory={setCategory}/>
-      <NewsContent newsArray={newsArray} newsResults={newsResults} />
+      <NewsContent
+      setLoadmore={setLoadmore}  
+      loadmore={loadmore} 
+      newsArray={newsArray} 
+      newsResults={newsResults} />
      <Footer/>
     </div>
   );
