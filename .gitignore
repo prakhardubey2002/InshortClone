@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-/ign
+.env
 # production
 /build
 #key
